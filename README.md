@@ -11,6 +11,9 @@ Trello link:
 
 Color Pallete:
   [Color Pallete](./color_palette.png)
+
+Fonts:
+  [Fonts](./Screen Shot 2018-06-14 at 3.01.16 PM.png)
   
 
 
