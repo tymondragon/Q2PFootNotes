@@ -18,7 +18,7 @@ app.post('footnotes/users', (req, res, next)=> {
   //sign in as user
 })
 
-////USERS NOTES//
+////USERS ROUTES//
 app.get('footnotes/users/:id', (req, res, next) => {
   //return users info
 })
