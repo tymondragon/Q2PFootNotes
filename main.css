@@ -1,6 +1,5 @@
-.landingText:
 font-family: 'Song Myung', serif;
 
-body {
-   background-image: 'books-finals.jpg';
+body{
+  background-image: ./books-finals.jpg;
 }
