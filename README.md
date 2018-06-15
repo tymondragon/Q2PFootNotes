@@ -9,8 +9,6 @@ Github link:
 Trello link:
   https://trello.com/b/PP4rF3Mi/footnotes
 
-
-
 ERD:
   [ERD](./footnote_erd.png)
 
