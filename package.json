@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/GregOmer/Q2PFootNotes/issues"
   },
-  "homepage": "https://github.com/GregOmer/Q2PFootNotes#readme"
+  "homepage": "https://github.com/GregOmer/Q2PFootNotes#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
 }
