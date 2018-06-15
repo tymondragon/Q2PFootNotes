@@ -26,4 +26,7 @@ Style Guide:
      [Color Pallete](./color_palette.png)
 
         Fonts:
-        [Fonts](.
+        [Fonts](./font_sample.png)
+
+WireFrame:
+  [WireFrame](./q2pwireframes.pdf)
