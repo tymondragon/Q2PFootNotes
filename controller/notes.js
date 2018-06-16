@@ -1,31 +1,31 @@
 const model = require('../model/notes.js')
 
-let createNote = () => {
+let createNote = (req, res, next) => {
   const data = model.create()
   res.status(200).json(data)
 }
-let getOneNote = () => {
+let getOneNote = (req, res, next) => {
   const data = model.getOne()
   res.status(200).json(data)
 }
-let updateNote = () => {
+let updateNote = (req, res, next) => {
   const data = model.getOne()
   res.status(200).json(data)
 }
-let deleteOneNote = () => {
-  const data = model.getOne()
+let deleteOneNote = (req, res, next) => {
+  const data = model.deletOneNote()
   res.status(200).json(data)
 }
-let createUser = () => {
-  const data = model.getOne()
+let createUser = (req, res, next) => {
+  const data = model.createUser()
   res.status(200).json(data)
 }
-let getOneUser = () => {
-  const data = model.getOne()
+let getOneUser = (req, res, next) => {
+  const data = model.getOneUser()
   res.status(200).json(data)
 }
-let updateUser = () => {
-  const data = model.getOne()
+let updateUser = (req, res, next) => {
+  const data = model.updateUser()
   res.status(200).json(data)
 }
 
