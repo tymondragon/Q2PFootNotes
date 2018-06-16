@@ -6,28 +6,10 @@ h1 {
   -webkit-text-stroke-color: black;
 }
 #loginPage {
-  background-image: url("./books-finals.jpg") center fixed;
-  height: 100%;
-  z-index: 0;
-}
-
-.dashboardBody {
-  background: url("./stacked-books.png") center fixed;
-  margin: 40px;
-  display: grid;
-  grid-template-rows: 10% 85%;
-  grid-template-columns: 100px 100px 100px;
-  grid-gap: 10px;
-  background-color: #fff;
-  color: #444;
-}
-
-
-.dashboardNavBar {
-  text:black;
-  grid-template-rows: 100%;
-  grid-template-columns: 100%;
-  display:block;
-  background-color:grey;
-  width: 60px;
+  background: url("./books-finals.jpg") center fixed;
+  text: black;
+  font-weight: bolder;
+  font-size: large;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
