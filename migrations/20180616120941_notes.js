@@ -9,8 +9,8 @@ exports.up = function(knex, Promise) {
     table.string('video_link', 255).notNullable().defaultTo('')
     table.timestamps(true,true)
   })
-};
+}
 
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists('notes')
-};
+}
