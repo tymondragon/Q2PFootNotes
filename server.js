@@ -5,6 +5,7 @@ const app = express()
 const port = process.env.PORT || 3000
 const listener = () => {console.log(`Listening in on port ${port}.`)}
 
+app.disable('x-powered-by')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
