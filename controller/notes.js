@@ -5,7 +5,7 @@ let createNote = (req, res, next) => {
   res.status(200).json(data)
 }
 let getOneNote = (req, res, next) => {
-  const data = model.getOne()
+  const data = model.getOneNote()
   res.status(200).json(data)
 }
 let updateNote = (req, res, next) => {
