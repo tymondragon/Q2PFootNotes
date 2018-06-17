@@ -1,9 +1,18 @@
-const model = require('../model/notes.js')
-/////READ//////
+const knex = require('../knex')
+
+
 let getNotes = (req, res, next) => {
-  const data = model.getNotes()
-  console.log("DATA IS",data);
-  res.status(200).send(data)
+  let id = req.params.id
+  return knex('notes')
+    .where('user_id', id)
+    .then(result => {
+      console.log("WHEEEEEE!")
+      return res.status(200).send(result)
+    })
+    .catch((err) => {
+      {err : "404"}
+      return next({err})
+    })
 }
 let getOneNote = (req, res, next) => {
   let id = req.params.id
@@ -13,7 +22,7 @@ let getOneNote = (req, res, next) => {
 let getOneUser = (req, res, next) => {
   let id = req.params.id
   const data = model.getOneUser()
-  res.send("data")
+  res.send(data)
 }
 ////////CREATE////////
 let createUser = (req, res, next) => {

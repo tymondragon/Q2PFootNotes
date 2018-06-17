@@ -1,4 +1,5 @@
 /////////READ/////\
+const knex = require('../knex')
 let getNotes = (req, res, next) => {
   return knex('notes')
     .then(result => {
@@ -11,6 +12,7 @@ let getNotes = (req, res, next) => {
 }
 let getOneNote = (id) => {
   return knex('notes')
+  .where('user_id', id)
     .then(result => {
       console.log("WHEEEEEE!")
       return result
@@ -23,15 +25,16 @@ let getOneNote = (id) => {
 }
 let getOneUser = (id) => {
   return knex('users')
-  .where(id, 'users.id')
+  .where(id, 'id')
     .then(result => {
       return result
       console.log("WHEEEEEE!")
     })
-    .catch((err) => {
-      console.log("JELLLLLO!")
-      return next(err)
-    })
+    // .catch((err) => {
+    //   err =
+    //   console.log("JELLLLLO!")
+    //   return next(err)
+    // })
 }
 ///////////CREATE//////////
 let createNote = () => {
