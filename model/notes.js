@@ -1,23 +1,67 @@
+/////////READ/////\
+const knex = require('../knex')
+let getNotes = (req, res, next) => {
+  return knex('notes')
+    .then(result => {
+      console.log("WHEEEEEE!")
+      return result
+    })
+    .catch((err) => {
+      return next(err)
+    })
+}
+let getOneNote = (id) => {
+  return knex('notes')
+  .where('user_id', id)
+    .then(result => {
+      console.log("WHEEEEEE!")
+      return result
+    })
+    .catch((err) => {
+      console.log("JELLLLLO!")
+      return next("WHOOPs")
+    })
+  // return 'hello from getOneNote'
+}
+let getOneUser = (id) => {
+  return knex('users')
+  .where(id, 'id')
+    .then(result => {
+      return result
+      console.log("WHEEEEEE!")
+    })
+    // .catch((err) => {
+    //   err =
+    //   console.log("JELLLLLO!")
+    //   return next(err)
+    // })
+}
+///////////CREATE//////////
 let createNote = () => {
-console.log('hello from createNote')
-}
-let getOneNote = () => {
-console.log('hello from getOneNote')
-}
-let updateNote = () => {
-console.log('hello from updateNote')
-}
-let deleteOneNote = () => {
-console.log('hello from deleteOneNote')
+  return 'hello from createNote'
 }
 let createUser = () => {
-console.log('hello from createUser')
+  return 'hello from createUser'
 }
-let getOneUser = () => {
-console.log('hello from getOneUser')
+////////////UPDATE///////////
+let updateNote = () => {
+  return 'hello from updateNote'
 }
 let updateUser = () => {
-console.log('hello from updateUser')
+  return 'hello from updateUser'
+}
+////////////DELETE///////////
+let deleteOneNote = () => {
+  return 'hello from deleteOneNote'
 }
 
-module.exports = {createNote, getOneNote, updateNote, deleteOneNote, createUser, getOneUser, updateUser}
+module.exports = {
+  createNote,
+  getOneNote,
+  getNotes,
+  updateNote,
+  deleteOneNote,
+  createUser,
+  getOneUser,
+  updateUser
+}
