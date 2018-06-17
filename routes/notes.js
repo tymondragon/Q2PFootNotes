@@ -3,7 +3,7 @@ const router = express.Router()
 const ctrl = require('../controller/notes.js')
 
 router.post('/:email/:password', ctrl.signIn)
-router.post('/notes', ctrl.createNote)
+router.post('/notes', ctrl.createNote)///////done////////
 router.get('/users/:id/notes', ctrl.getNotes)////////done//////
 router.get('/notes', ctrl.getAllNotes)////////done//////
 
