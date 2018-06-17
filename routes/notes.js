@@ -2,14 +2,14 @@ const express = require('express')
 const router = express.Router()
 const ctrl = require('../controller/notes.js')
 
-router.post('/:email/:password', ctrl.signIn)
+router.post('/users', ctrl.signIn)/////Will be done later////
 router.post('/notes', ctrl.createNote)///////done////////
 router.get('/users/:id/notes', ctrl.getNotes)////////done//////
 router.get('/notes', ctrl.getAllNotes)////////done//////
 
 // router.get('/notes/:id', ctrl.getNotesBySubject)
-router.patch('/users/:id/notes/:id', ctrl.updateNote)
-router.delete('/users/:id/notes/:id', ctrl.deleteOneNote)
+router.patch('/users/:id/notes/:id', ctrl.updateNote)////
+router.delete('/notes/:id', ctrl.deleteOneNote)
 
 //////////////////////////////////////
 //////////////////////////////////////

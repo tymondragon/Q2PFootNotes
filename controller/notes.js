@@ -132,8 +132,24 @@ let updateUser = (req, res, next) => {
 }
 //////////DELETE/////////
 let deleteOneNote = (req, res, next) => {
-  const data = model.deletOneNote()
-  res.status(200).json(data)
+  knex('notes')
+    .where('id', req.params.id)
+    .first()
+    .then((result) => {
+      if(!result) return next()
+      knex('notes')
+        .del()
+        .where('id', req.params.id)
+        .then(() => {
+          res.send(`ID ${req.params.id} Deleted`)
+        })
+    })
+    .catch((err) => {
+      let error = {
+        err: "404"
+      }
+      return next({error})
+    })
 }
 
 
