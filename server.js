@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 
 const footnotes = require('./routes/notes.js')
-app.use('/footnotes', footnotes)
+app.use('/footnotes',footnotes)
 
 app.use((err, req, res, next) => {
   const status = err.status || 500
