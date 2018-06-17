@@ -109,8 +109,26 @@ let updateNote = (req, res, next) => {
   res.status(200).json(data)
 }
 let updateUser = (req, res, next) => {
-  const data = model.updateUser()
-  res.status(200).json(data)
+  knex('users')
+  .where('id', req.params.id)
+  .then((data) => {
+    knex('users')
+    .where('id', req.params.id)
+    .limit(1)
+    .update({
+      "first_name": req.body.first_name,
+      "last_name": req.body.last_name,
+      "email": req.body.email,
+      "hashed_pw": req.body.hashed_pw
+    })
+    .returning('*')
+    .then((data) => {
+      res.json(data[0])
+    })
+  })
+  .catch((err) => {
+    next(err)
+  })
 }
 //////////DELETE/////////
 let deleteOneNote = (req, res, next) => {

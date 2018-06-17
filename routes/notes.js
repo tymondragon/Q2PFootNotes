@@ -16,7 +16,7 @@ router.delete('/users/:id/notes/:id', ctrl.deleteOneNote)
 
 router.post('/users', ctrl.createUser)////////done/////
 router.get('/users/:id', ctrl.getOneUser)///////done/////
-router.patch('/users/:id', ctrl.updateUser)
+router.patch('/users/:id', ctrl.updateUser)//////done////
 // const ctrlUser = require('../controller/users.js')
 //
 // router.delete('/users/:id', ctrlUser.deleteOne)
