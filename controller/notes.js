@@ -8,6 +8,10 @@ let getOneNote = (req, res, next) => {
   const data = model.getOneNote()
   res.status(200).json(data)
 }
+let getNotes = (req, res, next) => {
+  const data = model.getNotes()
+  res.status(200).json(data)
+}
 let updateNote = (req, res, next) => {
   const data = model.getOne()
   res.status(200).json(data)
@@ -30,4 +34,4 @@ let updateUser = (req, res, next) => {
 }
 
 
-module.exports = {createNote, getOneNote, updateNote, deleteOneNote, createUser, getOneUser, updateUser}
+module.exports = {createNote, getOneNote, getNotes, updateNote, deleteOneNote, createUser, getOneUser, updateUser}

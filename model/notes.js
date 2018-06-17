@@ -1,23 +1,26 @@
 let createNote = () => {
-console.log('hello from createNote')
+return 'hello from createNote'
 }
 let getOneNote = () => {
-console.log('hello from getOneNote')
+return 'hello from getOneNote'
+}
+let getNotes = () => {
+return 'hello from getNotes'
 }
 let updateNote = () => {
-console.log('hello from updateNote')
+return 'hello from updateNote'
 }
 let deleteOneNote = () => {
-console.log('hello from deleteOneNote')
+return 'hello from deleteOneNote'
 }
 let createUser = () => {
-console.log('hello from createUser')
+return 'hello from createUser'
 }
 let getOneUser = () => {
-console.log('hello from getOneUser')
+return 'hello from getOneUser'
 }
 let updateUser = () => {
-console.log('hello from updateUser')
+return 'hello from updateUser'
 }
 
-module.exports = {createNote, getOneNote, updateNote, deleteOneNote, createUser, getOneUser, updateUser}
+module.exports = {createNote, getOneNote, getNotes, updateNote, deleteOneNote, createUser, getOneUser, updateUser}
