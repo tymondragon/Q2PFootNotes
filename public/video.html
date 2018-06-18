@@ -5,7 +5,6 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css?family=Song+Myung|Lato" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=[first font name]|[second font name]" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="main.css">
@@ -16,29 +15,95 @@
 </head>
 
 <body>
-  <div class="videoWindow">
-    <!-- Video window goes here -->
+  <!-- Video window goes here -->
+
+
+  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+  <div class="video-container">
+    <div id="player"></div>
   </div>
+
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script>
+    var tag = document.createElement('script');
+
+    tag.src = 'https://www.youtube.com/iframe_api';
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    var videoKey = "d1oRLk_PfjM";
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'd1oRLk_PfjM',
+        events: {'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player’s state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo);
+        done = true;
+      }
+    }
+
+    function stopVideo() {
+      player.stopVideo();
+    }
+  </script>
+  <script src="https://apis.google.com.js/client.js?onload=init"></script>
+  <!-- ///////////////////video player code only above///////////// -->
   <!-- note field, old notes, and suggested videos here -->
   <div class="threePiece">
     <div class="row">
       <form class="col s4">
         <div class="row">
           <div class="input-field col s4">
-            <textarea id="textarea1" placeholder="enter notes here" class="materialize-textarea"></textarea>
+            <textarea id="textarea1" placeholder="USERS/NOTE/ID" class="materialize-textarea"></textarea>
             <label for="textarea1"></label>
+          </div>
+        </div>
+      </form>
+      <form class="col s4">
+        <div class="row">
+          <div class="input-field col s4">
+            <textarea id="textarea2" placeholder="NEW NOTE" class="materialize-textarea"></textarea>
+            <label for="textarea2"></label>
           </div>
         </div>
       </form>
       <div>
         <!-- this is where the self populating "old notes" should be -->
+        <form class="col s4">
+          <div class="row">
+            <div class="input-field col s4">
+              <textarea id="textarea3" placeholder="USERS/NOTES" class="materialize-textarea"></textarea>
+              <label for="textarea3"></label>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
 
   </div>
-
-  <!--JavaScript at end of body for optimized loading-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> -->
   <script src="dom.js"></script>
 </body>
 
