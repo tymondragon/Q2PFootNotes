@@ -14,16 +14,22 @@
   <title>FootNotes   Home Page</title>
 </head>
 
-<body class="dashboardBody">
+<body>
   <div class="dashboardNavBar row">
-    <ul>
-      <li><a href="default.asp">Home</a></li>
-      <li><a href="news.asp">Video Search</a></li>
-      <li><a href="contact.asp">Search Notes</a></li>
-    </ul>
+    <nav>
+      <div class="nav-wrapper blue-grey darken-1">
+        <a href="#" class="brand-logo">FootNotes</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="dashboard.html">Note Search</a></li>
+          <li><a href="results.html">Video Search</a></li>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class="dashboardBody">
-    <h1> Hey, ${name}! Welcome back. </h1>
+  <div id="dashboardBody">
+    <h1 align="center"> `Hey, ${name}! Welcome back.` </h1>
 
 
     <!-- Notes search bar, video search bar -->
