@@ -16,7 +16,7 @@ router.get('/notes', ctrl.getAllNotes)////////done//////
 // router.get('/notes/:id', ctrl.getNotesBySubject)
 
 
-router.patch('/users/:id/notes/:id', ctrl.updateNote)////done
+router.patch('notes/:id', ctrl.updateNote)////done
 router.patch('/users/:id', ctrl.updateUser)//////done////
 
 

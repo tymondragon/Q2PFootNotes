@@ -105,8 +105,26 @@ let getOneUser = (req, res, next) => {
 }
 ///////UPDATE///////
 let updateNote = (req, res, next) => {
-  const data = model.updateNote()
-  res.status(200).json(data)
+  knex('notes')
+ .where('id', req.params.id)
+ .then((data) => {
+   knex('notes')
+   .where('id', req.params.id)
+   .limit(1)
+   .update({
+     "user_id" : req.body.user_id,
+     "subject": req.body.subject,
+     "content": req.body.content,
+     "video_link": req.body.video_link
+   })
+   .returning('*')
+   .then((data) => {
+     res.json(data[0])
+   })
+ })
+ .catch((err) => {
+   next(err)
+ })
 }
 let updateUser = (req, res, next) => {
   knex('users')
