@@ -1,7 +1,7 @@
 const knex = require('../knex')
 /////SIGN IN////////
 let signIn = (req, res, next) => {
-  let email = req.body.email
+  let email = req.body.first_name
   let password = req.body.password
 }
 
