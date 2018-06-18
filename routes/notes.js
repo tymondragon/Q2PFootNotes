@@ -10,10 +10,10 @@ router.post('/notes', ctrl.createNote)///////done////////
 
 
 
-router.get('/users/:id/notes', ctrl.getNotes)////////done//////
+router.get('/notes/:id', ctrl.getNotes)////////done//////
 router.get('/users/:id', ctrl.getOneUser)///////done/////
 router.get('/notes', ctrl.getAllNotes)////////done//////
-// router.get('/notes/:id', ctrl.getNotesBySubject)
+router.get('/notes/:user_id/:notes_id', ctrl.getOneNoteForUser)
 
 
 router.patch('notes/:id', ctrl.updateNote)////done
