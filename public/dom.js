@@ -1,29 +1,25 @@
-<<<<<<< HEAD
-const footnotes = "http//localstorage:3000/"
-let notesId
-let userId
 $(document).ready(function() {
-    /////this is the create note function for the video page////
-    $('#')
-
-
-
-//       $('oldnotelist ').click((e) => {
-//             e.prevent.default()
-//             $.ajax({
-//                 url: `${footnotes}notes/${userId}/${notesId}`,
-//                 type: 'GET',
-//                 data: $(this).serialize(),
-//                 success: (data) => {
-//
-// // <a href="#!" class="collection-item">Alvin</a>
-//                 },
-//                 error: function(jqXhr, textStatus, errorThrown) {
-//                   console.log('OOPS:', errorThrown)
-//                 })
-//             })
-=======
-$(document).ready(function(){
   $('.modal').modal();
+  $('#login').click((event) => {
+    event.preventDefault()
+    console.log("Hello");
+    $.ajax({
+      url: 'http://localhost:3000/footnotes/signup',
+      type: 'POST',
+      data: {
+        first_name: $('#first_name').val(),
+        last_name: $('#last_name').val(),
+        email: $('#email').val(),
+        hashed_pw: $('#hashed_pw').val()
+      },
+      success: (data) => {
+        console.log("yay! for objects", data)
+        // UPDATE DOM!
+        // $('doohickey').append(data)
+      },
+      error: function(jqXhr, textStatus, errorThrown) {
+        console.log('OOPS:', errorThrown)
+      }
+    })
+  })
 });
->>>>>>> c12f3b38bfa3d9fd4f68b55083881ac70d2468cd

@@ -5,7 +5,7 @@ const ctrl = require('../controller/notes.js')
 
 
 router.post('/login', ctrl.signIn)/////Will be done later////
-router.post('/users', ctrl.createUser)////////done/////
+router.post('/signup', ctrl.createUser)////////done/////
 router.post('/notes', ctrl.createNote)///////done////////
 
 
@@ -14,6 +14,7 @@ router.get('/notes/:id', ctrl.getNotes)////////done//////
 router.get('/users/:id', ctrl.getOneUser)///////done/////
 router.get('/notes', ctrl.getAllNotes)////////done//////
 router.get('/notes/:user_id/:notes_id', ctrl.getOneNoteForUser)
+router.get('/users', ctrl.getUsers)
 
 
 router.patch('notes/:id', ctrl.updateNote)////done
