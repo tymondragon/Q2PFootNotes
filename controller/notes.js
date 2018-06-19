@@ -105,6 +105,7 @@ let getOneNote = (req, res, next) => {
 let getOneUser = (req, res, next) => {
   knex('users')
     .where('id', req.params.id)
+    .first()
     .then((result) => {
       res.send(result)
     })
@@ -207,7 +208,15 @@ let deleteOneNote = (req, res, next) => {
       })
     })
 }
-
+let getUsers = (req, res, next) => {
+  return knex('users')
+    .then((rows) => {
+      res.json(rows)
+    })
+    .catch((err) => {
+      next(err)
+    })
+}
 
 module.exports = {
   getAllNotes,
@@ -220,6 +229,7 @@ module.exports = {
   createUser,
   getOneUser,
   updateUser,
-  getOneNote
+  getOneNote,
+  getUsers
 }
 // getNotesBySubject,
