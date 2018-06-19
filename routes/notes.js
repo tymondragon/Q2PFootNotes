@@ -4,7 +4,7 @@ const ctrl = require('../controller/notes.js')
 
 
 
-router.post('/users', ctrl.signIn)/////Will be done later////
+router.post('/login', ctrl.signIn)/////Will be done later////
 router.post('/users', ctrl.createUser)////////done/////
 router.post('/notes', ctrl.createNote)///////done////////
 
