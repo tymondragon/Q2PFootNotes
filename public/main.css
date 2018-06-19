@@ -13,3 +13,11 @@ h1 {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
 }
+#dashboardBody {
+  background: url("../stacked-books.png") center fixed;
+  text: black;
+  font-weight: bolder;
+  font-size: large;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
