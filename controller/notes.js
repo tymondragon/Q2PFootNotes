@@ -1,8 +1,17 @@
 const knex = require('../knex')
 /////SIGN IN////////
 let signIn = (req, res, next) => {
-  let email = req.body.first_name
-  let password = req.body.password
+  knex('users')
+    .andWhere('email', req.body.email)
+    .andWhere('hashed_pw', req.body.hashed_pw)
+    .then((result) => {
+      if (result[0].email && result[0].hashed_pw) {
+        res.send(result[0])
+      }
+    })
+    .catch((err) => {
+      res.send("Please enter the correct information")
+    })
 }
 
 ////////CREATE////////
