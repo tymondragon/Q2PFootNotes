@@ -10,7 +10,6 @@ app.disable('x-powered-by')
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 app.use(morgan('dev'))
-app.use()
 const footnotes = require('./routes/notes.js')
 app.use('/footnotes',footnotes)
 
