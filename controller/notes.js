@@ -16,6 +16,7 @@ let signIn = (req, res, next) => {
 
 ////////CREATE////////
 let createUser = (req, res, next) => {
+  console.log(req.body);
   return knex('users')
     .insert({
       "first_name": req.body.first_name,
