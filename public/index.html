@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <title>FootNotes   Video</title>
+  <title>FootNotes Video</title>
 </head>
 
 <body id="loginPage">
@@ -22,10 +22,6 @@
           <div class="input-field col s6 offset-s3">
             <input placeholder="What should we call you?" id="first_name" type="text" class="validate" name="first_name" required="" aria-required="true">
             <label for="first_name">First Name</label>
-          </div>
-          <div class="input-field col s6 offset-s3">
-            <input placeholder="This helps us avoid duplicates" id="last_name" type="text" class="validate" name="last_name" required="" aria-required="true">
-            <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
@@ -40,37 +36,45 @@
             <label for="password">Password</label>
           </div>
         </div>
+        <div class="row">
+          <div id="password2" class="input-field col s6 offset-s3">
+            <input placeholder="Passwords must match" id="hashed_pw" type="password" class="validate" name="hashed_pw" required="" aria-required="true">
+            <label for="password">Confirm Password</label>
+          </div>
+        </div>
         <a id="login" class="waves-effect waves-light btn-large col s6 offset-s3 blue-grey darken-2" type='submit' href="/dashboard.html"><i class="material-icons right">school</i>Login</a>
       </div>
     </form>
   </div>
   <!-- Modal Trigger -->
- <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Returning User? Click here</a> -->
- <div class="row">
-   <button id="returnUserButt" data-target="modal1" class="btn modal-trigger col s2 offset-s5 blue-grey darken">Returning User?</button>
+  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Returning User? Click here</a> -->
+  <div class="row">
+    <button id="returnUserButt" data-target="modal1" class="btn modal-trigger col s2 offset-s5 blue-grey darken">Returning User?</button>
 
-   <!-- Modal Structure -->
-   <div id="modal1" class="modal">
-     <div class="modal-content">
-       <h4>Please Sign In</h4>
-       <p><div class="row">
-         <div class="input-field col s6 offset-s3">
-           <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email" required="" aria-required="true">
-           <label for="email">Email</label>
-         </div>
-       </div>
-       <div class="row">
-         <div class="input-field col s6 offset-s3">
-           <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password" required="" aria-required="true">
-           <label for="password">Password</label>
-         </div>
-       </div> </p>
-     </div>
-     <div class="modal-footer">
-       <a id="login" href="dashboard.html" class="modal-close waves-effect waves-green btn-flat"><h6>Submit</h6></a>
-     </div>
-   </div>
- </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>Please Sign In</h4>
+        <p>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email" required="" aria-required="true">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password" required="" aria-required="true">
+              <label for="password">Password</label>
+            </div>
+          </div>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <a id="login" href="dashboard.html" class="modal-close waves-effect waves-green btn-flat"><h6>Submit</h6></a>
+      </div>
+    </div>
+  </div>
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="dom.js"></script>
