@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   $('.modal').modal();
   $('#login').click((event) => {
@@ -15,12 +14,14 @@ $(document).ready(function() {
       },
       success: (data) => {
         console.log("yay! for objects", data)
-        // UPDATE DOM!
-        // $('doohickey').append(data)
+        localStorage.setItem('userLogin', JSON.stringify(`${data.id}`))
+        // window.location.href =
       },
       error: function(jqXhr, textStatus, errorThrown) {
         console.log('OOPS:', errorThrown)
       }
     })
+
   })
+
 });
