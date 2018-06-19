@@ -90,6 +90,7 @@ let getAllNotes = (req, res, next) => {
 let getOneNote = (req, res, next) => {
   knex('notes')
     .where('id', req.params.id)
+    .first()
     .then((result) => {
       res.send(result)
     })
