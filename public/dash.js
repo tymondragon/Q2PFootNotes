@@ -1,1 +1,3 @@
-doc
+// $(document).ready(function() {
+//
+// }

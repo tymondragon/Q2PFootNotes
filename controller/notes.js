@@ -1,6 +1,7 @@
 const knex = require('../knex')
 /////SIGN IN////////
 let signIn = (req, res, next) => {
+  console.log(req.body);
   knex('users')
     .andWhere('email', req.body.email)
     .andWhere('hashed_pw', req.body.hashed_pw)
