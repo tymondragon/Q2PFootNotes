@@ -15,12 +15,12 @@ font-family: 'Song Myung', serif;
 }
 h1{
   color: white;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
-h3{
+h4{
   color: white;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 #login {
