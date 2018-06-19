@@ -12,16 +12,17 @@ $(document).ready(function() {
         email: $('#email').val(),
         hashed_pw: $('#hashed_pw').val()
       },
-      success: (data) => {
+      dataType: 'json'
+      })
+      .done((data) => {
         console.log("yay! for objects", data)
         localStorage.setItem('userLogin', JSON.stringify(`${data.id}`))
         window.location.href = './dashboard.html'
-      },
-      error: function(jqXhr, textStatus, errorThrown) {
-        console.log('OOPS:', errorThrown)
-      }
-    })
 
+      })
+      .fail (function(jqXhr, textStatus, errorThrown) {
+        console.log('OOPS:', errorThrown)
+      })
   })
 
-});
+});/////end of the doc .ready function
