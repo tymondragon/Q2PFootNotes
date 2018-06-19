@@ -20,7 +20,7 @@ $(document).ready(function() {
               })
               .done((data) => {
                 console.log("yay! for objects", data)
-                localStorage.setItem('userLogin', JSON.stringify(`${data.id}`))
+                localStorage.setItem('userLogin', JSON.stringify(`${data.id, data.first_name}`))
                 window.location.href = './dashboard.html'
               })
               .fail(function(jqXhr, textStatus, errorThrown) {
