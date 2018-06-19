@@ -4,7 +4,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css?family=Song+Myung|Lato" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=[first font name]|[second font name]" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
   <link rel="stylesheet" href="main.css">
@@ -12,7 +11,7 @@
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <title>FootNotes   Video</title>
-  <style>
+  <!-- <style>
     #loginPage {
       background: url("./books-finals.jpg") center fixed;
       text: black;
@@ -21,13 +20,13 @@
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: white;
     }
-  </style>
+  </style> -->
 </head>
 
 <body id="loginPage">
   <h1 align="center"> Hi! Welcome to FootNotes! </h1>
   <div class="row">
-    <form class="col s12">
+    <form class="col s12" action="index.html" method="post">
       <div class="card blue-grey darken-1 col s6 offset-s3">
         <div class="row">
           <div class="input-field col s6 offset-s3">
@@ -47,11 +46,11 @@
         </div>
         <div class="row">
           <div class="input-field col s6 offset-s3">
-            <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password">
+            <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="hashed_pw">
             <label for="password">Password</label>
           </div>
         </div>
-        <a class="waves-effect waves-light btn-large col s6 offset-s3 blue-grey darken-2"><i class="material-icons right">school</i>Login</a>
+        <a id="login" class="waves-effect waves-light btn-large col s6 offset-s3 blue-grey darken-2" type='submit'><i class="material-icons right">school</i>Login</a>
       </div>
     </form>
   </div>
@@ -66,19 +65,19 @@
        <h4>Please Sign In</h4>
        <p><div class="row">
          <div class="input-field col s6 offset-s3">
-           <input placeholder="We won't send you junk" id="email" type="email" class="validate">
+           <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email">
            <label for="email">Email</label>
          </div>
        </div>
        <div class="row">
          <div class="input-field col s6 offset-s3">
-           <input placeholder="BatmanShadow696969" id="password" type="password" class="validate">
+           <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password">
            <label for="password">Password</label>
          </div>
        </div> </p>
      </div>
      <div class="modal-footer">
-       <a href="#!" class="modal-close waves-effect waves-green btn-flat"><h6>Submit</h6></a>
+       <a id="login" href="dashboard.html" class="modal-close waves-effect waves-green btn-flat"><h6>Submit</h6></a>
      </div>
    </div>
  </div>
