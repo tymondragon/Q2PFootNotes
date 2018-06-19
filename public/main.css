@@ -6,7 +6,7 @@ h1 {
   -webkit-text-stroke-color: black;
 }
 #loginPage {
-  background: url("./books-finals.jpg") center fixed;
+  background: url("../books-finals.jpg") center fixed;
   text: black;
   font-weight: bolder;
   font-size: large;

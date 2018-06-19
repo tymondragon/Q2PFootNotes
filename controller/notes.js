@@ -1,8 +1,17 @@
 const knex = require('../knex')
 /////SIGN IN////////
 let signIn = (req, res, next) => {
-  let email = req.body.first_name
-  let password = req.body.password
+  knex('users')
+    .andWhere('email', req.body.email)
+    .andWhere('hashed_pw', req.body.hashed_pw)
+    .then((result) => {
+      if (result[0].email && result[0].hashed_pw) {
+        res.send(result[0])
+      }
+    })
+    .catch((err) => {
+      res.send("Please enter the correct information")
+    })
 }
 
 ////////CREATE////////
@@ -96,6 +105,7 @@ let getOneNote = (req, res, next) => {
 let getOneUser = (req, res, next) => {
   knex('users')
     .where('id', req.params.id)
+    .first()
     .then((result) => {
       res.send(result)
     })
@@ -198,7 +208,15 @@ let deleteOneNote = (req, res, next) => {
       })
     })
 }
-
+let getUsers = (req, res, next) => {
+  return knex('users')
+    .then((rows) => {
+      res.json(rows)
+    })
+    .catch((err) => {
+      next(err)
+    })
+}
 
 module.exports = {
   getAllNotes,
@@ -211,6 +229,7 @@ module.exports = {
   createUser,
   getOneUser,
   updateUser,
-  getOneNote
+  getOneNote,
+  getUsers
 }
 // getNotesBySubject,
