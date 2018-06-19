@@ -13,65 +13,67 @@
   <title>FootNotes Video</title>
 </head>
 
-<body id="loginPage">
-  <h1 align="center"> Hi! Welcome to FootNotes! </h1>
-  <div class="row">
-    <form class="col s12" action="/footnotes/signup" method="post">
-      <div class="card blue-grey darken-1 col s6 offset-s3">
-        <div class="row">
-          <div class="input-field col s6 offset-s3">
-            <input placeholder="What should we call you?" id="first_name" type="text" class="validate" name="first_name" required="" aria-required="true">
-            <label for="first_name">First Name</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6 offset-s3">
-            <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email">
-            <label for="email">Email</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6 offset-s3">
-            <input placeholder="BatmanShadow696969" id="hashed_pw" type="password" class="validate" name="hashed_pw" required="" aria-required="true">
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6 offset-s3">
-            <input placeholder="Passwords must match" id="password2" type="password" class="validate" name="hashed_pw" required="" aria-required="true">
-            <label for="password">Confirm Password</label>
-          </div>
-        </div>
-        <a id="login" class="waves-effect waves-light btn-large col s6 offset-s3" type='submit' href="./dashboard.html"><i class="material-icons right">school</i>SIGN UP</a>
-      </div>
-    </form>
-  </div>
-  <!-- Modal Trigger -->
-  <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Returning User? Click here</a> -->
-  <div class="row">
-    <button id="returnUserButt" data-target="modal1" class="btn modal-trigger col s2 offset-s5 blue-grey darken">Returning User?</button>
-
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <h4>Please Sign In</h4>
-        <p>
+<body>
+  <div id="loginPage">
+    <h1 align="center"> Hi! Welcome to FootNotes! </h1>
+    <div class="row">
+      <form class="col s12" action="/footnotes/signup" method="post">
+        <div class="card blue-grey darken-1 col s6 offset-s3">
           <div class="row">
             <div class="input-field col s6 offset-s3">
-              <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email" required="" aria-required="true">
+              <input placeholder="What should we call you?" id="first_name" type="text" class="validate" name="first_name" required="" aria-required="true">
+              <label for="first_name">First Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email">
               <label for="email">Email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6 offset-s3">
-              <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password" required="" aria-required="true">
+              <input placeholder="BatmanShadow696969" id="hashed_pw" type="password" class="validate" name="hashed_pw" required="" aria-required="true">
               <label for="password">Password</label>
             </div>
           </div>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <a id="login" href="dashboard.html" class="modal-close waves-effect waves-green btn-flat"><h6>Submit</h6></a>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <input placeholder="Passwords must match" id="password2" type="password" class="validate" name="hashed_pw" required="" aria-required="true">
+              <label for="password">Confirm Password</label>
+            </div>
+          </div>
+          <a id="login" class="waves-effect waves-light btn-large col s6 offset-s3" type='submit' href="./dashboard.html"><i class="material-icons right">school</i>SIGN UP</a>
+        </div>
+      </form>
+    </div>
+    <!-- Modal Trigger -->
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Returning User? Click here</a> -->
+    <div class="row">
+      <button id="returnUserButt" data-target="modal1" class="btn modal-trigger col s2 offset-s5 blue-grey darken">Returning User?</button>
+
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Please Sign In</h4>
+          <p>
+            <div class="row">
+              <div class="input-field col s6 offset-s3">
+                <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email" required="" aria-required="true">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6 offset-s3">
+                <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password" required="" aria-required="true">
+                <label for="password">Password</label>
+              </div>
+            </div>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a id="login" href="dashboard.html" class="modal-close waves-effect btn-flat"><h6>Submit</h6></a>
+        </div>
       </div>
     </div>
   </div>

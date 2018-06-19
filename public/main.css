@@ -2,11 +2,9 @@ font-family: 'Song Myung', serif;
 
 #loginPage {
   background: url("../books-finals.jpg") center fixed;
-  text: black;
+  text: white;
   font-weight: bolder;
   font-size: large;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
 }
 #dashboardBody {
   background: url("../stacked-books.png") center fixed;
@@ -16,13 +14,13 @@ font-family: 'Song Myung', serif;
   font-size: large;
 }
 h1{
-  color:white;
-  -webkit-text-stroke-width: 1px;
+  color: white;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
 h3{
-  color:white;
-  -webkit-text-stroke-width: 1px;
+  color: white;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
 #login {
