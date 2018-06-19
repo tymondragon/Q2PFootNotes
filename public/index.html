@@ -11,16 +11,6 @@
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <title>FootNotes   Video</title>
-  <!-- <style>
-    #loginPage {
-      background: url("./books-finals.jpg") center fixed;
-      text: black;
-      font-weight: bolder;
-      font-size: large;
-      -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: white;
-    }
-  </style> -->
 </head>
 
 <body id="loginPage">
@@ -30,27 +20,27 @@
       <div class="card blue-grey darken-1 col s6 offset-s3">
         <div class="row">
           <div class="input-field col s6 offset-s3">
-            <input placeholder="What should we call you?" id="first_name" type="text" class="validate" name="first_name">
+            <input placeholder="What should we call you?" id="first_name" type="text" class="validate" name="first_name" required="" aria-required="true">
             <label for="first_name">First Name</label>
           </div>
           <div class="input-field col s6 offset-s3">
-            <input placeholder="This helps us avoid duplicates" id="last_name" type="text" class="validate" name="last_name">
+            <input placeholder="This helps us avoid duplicates" id="last_name" type="text" class="validate" name="last_name" required="" aria-required="true">
             <label for="last_name">Last Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6 offset-s3">
-            <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email">
+            <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email" required="" aria-required="true">
             <label for="email">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6 offset-s3">
-            <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="hashed_pw">
+            <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="hashed_pw" required="" aria-required="true">
             <label for="password">Password</label>
           </div>
         </div>
-        <a id="login" class="waves-effect waves-light btn-large col s6 offset-s3 blue-grey darken-2" type='submit'><i class="material-icons right">school</i>Login</a>
+        <a id="login" class="waves-effect waves-light btn-large col s6 offset-s3 blue-grey darken-2" type='submit' href="/dashboard.html"><i class="material-icons right">school</i>Login</a>
       </div>
     </form>
   </div>
@@ -65,13 +55,13 @@
        <h4>Please Sign In</h4>
        <p><div class="row">
          <div class="input-field col s6 offset-s3">
-           <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email">
+           <input placeholder="We won't send you junk" id="email" type="email" class="validate" name="email" required="" aria-required="true">
            <label for="email">Email</label>
          </div>
        </div>
        <div class="row">
          <div class="input-field col s6 offset-s3">
-           <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password">
+           <input placeholder="BatmanShadow696969" id="password" type="password" class="validate" name="password" required="" aria-required="true">
            <label for="password">Password</label>
          </div>
        </div> </p>
