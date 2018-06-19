@@ -1,13 +1,23 @@
-$(document).ready(function(){
+$(document).ready(function() {
   $('.modal').modal();
-
-
-  $('form').submit((event) => {
-    event.preventDefault()
-    $.post(`http://localhost:3000/login`, $(this).serialize())
-      .then((result) => {
-        console.log(result)
-        // $('#result').html(result)
-      })
+  $('#login').click((event) => {
+    $.ajax({
+      url: 'footnotes/signup',
+      type: 'POST',
+      data: {
+        first_name: $('#first_name').text(),
+        last_name: $('#last_name').text(),
+        email: $('#email').text(),
+        hashed_pw: $('#hashed_pw').text()
+      },
+      success: (data) => {
+        console.log(data)
+        // UPDATE DOM!
+        // $('doohickey').append(data)
+      },
+      error: function(jqXhr, textStatus, errorThrown) {
+        console.log('OOPS:', errorThrown)
+      }
+    })
   })
 });
