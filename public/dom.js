@@ -15,7 +15,7 @@ $(document).ready(function() {
       success: (data) => {
         console.log("yay! for objects", data)
         localStorage.setItem('userLogin', JSON.stringify(`${data.id}`))
-        // window.location.href =
+        window.location.href = './dashboard.html'
       },
       error: function(jqXhr, textStatus, errorThrown) {
         console.log('OOPS:', errorThrown)
