@@ -1,14 +1,13 @@
 $(document).ready(function() {
       $('.modal').modal();
+      /////This is the create a user//////
       $('#login').click((event) => {
           let password = $('#hashed_pw').val()
           let confirm = $('#password2').val()
           event.preventDefault()
           if (password !== confirm || password === '' || confirm === '') {
-            console.log("FAIL")
-
+            M.toast({html: 'Passwords Must Match!!'})
           } else {
-            console.log("sucess");
             $.ajax({
                 url: 'http://localhost:3000/footnotes/signup',
                 type: 'POST',
