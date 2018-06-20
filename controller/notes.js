@@ -2,7 +2,7 @@ const knex = require('../knex')
 /////SIGN IN////////
 let signIn = (req, res, next) => {
   knex('users')
-    .andWhere('email', req.body.email)
+    .where('email', req.body.email)
     .andWhere('hashed_pw', req.body.hashed_pw)
     .then((result) => {
       if (result[0].email && result[0].hashed_pw) {

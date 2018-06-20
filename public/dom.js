@@ -38,7 +38,7 @@ $(document).ready(function() {
     let modalPass = $('#password').val()
     event.preventDefault()
     if (modalPass === '' || email === '') {
-      console.log("This is email", email, "=thithiasehgia", modalPass)
+      // console.log("This is email", email, "=thithiasehgia", modalPass)
       M.toast({
         html: 'Please Enter Valid Credentials'
       })
@@ -54,11 +54,12 @@ $(document).ready(function() {
         })
         .done((data) => {
           console.log("User has signed in", data)
+          console.log(data, "JELLLOOOOOOO");
           localStorage.setItem('userLogin', JSON.stringify({
             id: data.id,
             name: data.first_name
           }))
-          window.location.href = './dashboard.html'
+          // window.location.href = './dashboard.html'
         })
         .fail(function(jqXhr, textStatus, errorThrown) {
           console.log('OOPS:', errorThrown)
