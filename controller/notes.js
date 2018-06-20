@@ -145,16 +145,17 @@ let updateNote = (req, res, next) => {
 }
 let getOneNoteForUser = (req, res, next) => {
   knex('notes')
-    .where('id', req.params.user_id)
+    .where('id', req.params.id)
     .first()
     .then((data) => {
       if (!data) return next()
-      knex('notes')
-        .where('id', req.params.notes_id)
-        .first()
-        .then((result) => {
-          res.send(result)
-        })
+      res.send(data)
+      // knex('notes')
+      //   .where('id', req.params.notes_id)
+      //   .first()
+      //   .then((result) => {
+      //     res.send(result)
+      //   })
     })
     .catch((err) => {
       let error = {
