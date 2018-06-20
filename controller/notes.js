@@ -122,22 +122,18 @@ let getOneUser = (req, res, next) => {
 }
 ///////UPDATE///////
 let updateNote = (req, res, next) => {
+  console.log("ID ID", req.params.id);
   knex('notes')
     .where('id', req.params.id)
+    .update({
+      "user_id": req.body.user_id,
+      "subject": req.body.subject,
+      "content": req.body.content,
+      "video_link": req.body.video_link
+    })
+    .returning('*')
     .then((data) => {
-      knex('notes')
-        .where('id', req.params.id)
-        .limit(1)
-        .update({
-          "user_id": req.body.user_id,
-          "subject": req.body.subject,
-          "content": req.body.content,
-          "video_link": req.body.video_link
-        })
-        .returning('*')
-        .then((data) => {
-          res.json(data[0])
-        })
+      res.json(data[0])
     })
     .catch((err) => {
       next(err)
@@ -150,12 +146,6 @@ let getOneNoteForUser = (req, res, next) => {
     .then((data) => {
       if (!data) return next()
       res.send(data)
-      // knex('notes')
-      //   .where('id', req.params.notes_id)
-      //   .first()
-      //   .then((result) => {
-      //     res.send(result)
-      //   })
     })
     .catch((err) => {
       let error = {
