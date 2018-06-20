@@ -67,7 +67,7 @@ $(document).ready(() => {
         .done(function(data) {
         console.log("hello" ,data.content);
         M.toast({
-          html: 'Your Note Was Updated',
+          html: 'Your Note Was Created',
           classes: 'rounded'
         })
       })
