@@ -1,5 +1,6 @@
 $(document).ready(() => {
   let note = JSON.parse(localStorage.getItem('noteId'))
+  let user = JSON.parse(localStorage.getItem('userLogin'))
   // const video = JSON.parse(localStorage.getItem('noteVid'))
   $.get(`http://localhost:3000/footnotes/note/${note}`, (data) => {
     // let videoLink = `${data.video_link.slice(17,28)}`
@@ -36,7 +37,8 @@ $(document).ready(() => {
         })
       })
   })
-  $('#watchVid').click(()=>{
+  //////////Get the video and load it/////////////
+  $('#watchVid').click(() => {
     let link = $("#ytVid").val()
     userVideo = `<iframe id="ytplayer" type="text/html" width="640" height="400"
     src="https://www.youtube.com/embed/${link.slice(17)}"
@@ -45,8 +47,19 @@ $(document).ready(() => {
     $('#vidPlayer').append(userVideo)
     $('#textarea1').empty()
   })
+  ///save the new note//////////
+  // $("#newButt").click(function() {
+  //   let newNote = $('#textarea2').val()
+  //   let link = $("#ytVid").val()
+  //   $.post("http://localhost:3000/footnotes/notes", {
+  //     user_id: user.id,
+  //     content: newNote,
+  //     video_link: link
+  //   }, function(){
+  //
+  //   })
+  // })
 })
-link.slice(17)
 
 // ${data.video_link.slice(17)}
 
