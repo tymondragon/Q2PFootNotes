@@ -16,12 +16,13 @@ $(document).ready(() => {
   })
   ///////////UPDATE old note///////
   $("#oldButt").click(() => {
+    console.log("button works");
     let newContent = $('#textarea1').val()
     $.ajax({
-        url: `/footnotes/note/${note}`,
-        type: 'POST',
+        url: `/footnotes/notes/${note}`,
+        type: 'PUT',
         data: {
-          "content": newContent
+          content: newContent
         },
         dataType: 'json'
       })
@@ -32,6 +33,7 @@ $(document).ready(() => {
         })
       })
       .fail(function(jqXhr, textStatus, errorThrown) {
+        console.log("*********", errorThrown);
         M.toast({
           html: 'Something is wrong',
           classes: 'rounded'

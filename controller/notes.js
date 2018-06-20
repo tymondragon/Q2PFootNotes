@@ -63,12 +63,8 @@ let getNotes = (req, res, next) => {
       return res.status(200).send(result)
     })
     .catch((err) => {
-      let error = {
-        err: "404"
-      }
-      return next({
-        error
-      })
+      console.log("GETNOTES ERRRRRROR", err);
+      res.send(err)
     })
 }
 let getAllNotes = (req, res, next) => {
@@ -88,12 +84,8 @@ let getOneNote = (req, res, next) => {
       res.send(result)
     })
     .catch((err) => {
-      let error = {
-        err: "404"
-      }
-      return next({
-        error
-      })
+      console.log("GET ONE NOTE ERRRRRROR", err);
+      res.send(err)
     })
 }
 
@@ -105,16 +97,13 @@ let getOneUser = (req, res, next) => {
       res.send(result)
     })
     .catch((err) => {
-      let error = {
-        err: "404"
-      }
-      return next({
-        error
-      })
+      console.log("ERRRRRROR", err);
+      res.send(err)
     })
 }
 ///////UPDATE///////
 let updateNote = (req, res, next) => {
+  console.log("NOTES.JS LINE 106", req.params.id);
   knex('notes')
     .where('id', req.params.id)
     .then((data) => {
@@ -122,17 +111,16 @@ let updateNote = (req, res, next) => {
         .where('id', req.params.id)
         .limit(1)
         .update({
-          "user_id": req.body.user_id,
-          "subject": req.body.subject,
-          "content": req.body.content,
-          "video_link": req.body.video_link
+          "content": req.body.content
         })
         .returning('*')
         .then((data) => {
+          console.log("DATA IS UPDATE NOTE", data)
           res.json(data[0])
         })
     })
     .catch((err) => {
+      console.log("UPDATE NOTE ERRRRRROR", err);
       next(err)
     })
 }
@@ -143,20 +131,10 @@ let getOneNoteForUser = (req, res, next) => {
     .then((data) => {
       if (!data) return next()
       res.send(data)
-      // knex('notes')
-      //   .where('id', req.params.notes_id)
-      //   .first()
-      //   .then((result) => {
-      //     res.send(result)
-      //   })
     })
     .catch((err) => {
-      let error = {
-        err: "404"
-      }
-      return next({
-        error
-      })
+      console.log("GET ONE NOTE FOR USER ERRRRRROR", err);
+      res.send(err)
     })
 }
 let updateUser = (req, res, next) => {
@@ -196,12 +174,8 @@ let deleteOneNote = (req, res, next) => {
         })
     })
     .catch((err) => {
-      let error = {
-        err: "404"
-      }
-      return next({
-        error
-      })
+      console.log("DELETE ONE NOTE ERRRRRROR", err);
+      res.send(err)
     })
 }
 let getUsers = (req, res, next) => {

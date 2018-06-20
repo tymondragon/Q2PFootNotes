@@ -17,7 +17,7 @@ router.get('/note/:id', ctrl.getOneNoteForUser)
 router.get('/users', ctrl.getUsers)
 
 
-router.patch('notes/:id', ctrl.updateNote)////done
+router.put('/notes/:id', ctrl.updateNote)////done
 router.patch('/users/:id', ctrl.updateUser)//////done////
 
 
