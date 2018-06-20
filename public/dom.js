@@ -47,8 +47,8 @@ $(document).ready(function() {
           url: '/footnotes/login',
           type: 'POST',
           data: {
-            email: $('#modalEmail').val(),
-            hashed_pw: $('#password').val()
+            "email": $('#modalEmail').val(),
+            "hashed_pw": $('#password').val()
           },
           dataType: 'json'
         })
