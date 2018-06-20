@@ -9,5 +9,10 @@ exports.seed = function(knex, Promise) {
         {id: 4,first_name: 'Johnny',last_name: 'C',email: 'whatmail@somemail.com',hashed_pw: '323nrnso97ydfg'},
         {id: 5,first_name: 'John',last_name: 'SW',email: 'wheresmail@somemail.com',hashed_pw: '349hfv949gh9v7s9hud'}
       ]);
-    });
+    })
+    .then(() => {
+      return knex.raw(
+        `SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));`
+      );
+    })
 };
