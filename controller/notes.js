@@ -26,9 +26,11 @@ let createUser = (req, res, next) => {
     })
     .returning('*')
     .then((data) => {
+      console.log("DATA IS JEJEJEJ", data);
       res.json(data[0])
     })
     .catch((err) => {
+      console.log("ERRRRRROR", err);
       res.send(err)
     })
 }
