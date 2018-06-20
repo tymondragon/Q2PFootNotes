@@ -12,15 +12,18 @@ $(document).ready(function() {
       let note = $(`<li class="collection-item avatar">
       <h5>Your Note:</h5>
       <p class="this-link">${data[i].content}
-      <a class="waves-effect waves-teal btn-flat right"><i id="${data[i].id}" class="material-icons right video">arrow_forward</i></a></p>
+      <a id="${data[i].video_link.slice(17)}" class="waves-effect waves-teal btn-flat right"><i id="${data[i].id}" class="material-icons right video">arrow_forward</i></a></p>
       </li>`)
       oldNotes.append(note)
     }
     $("i").bind("click", function () {
       event.preventDefault()
       let noteId = $(this).attr('id')
+      let noteVid = $(this).parent('a').attr('id')
+      console.log(noteVid);
       localStorage.setItem('noteId', JSON.stringify(noteId))
-      // window.location.href = './video.html'
+      localStorage.setItem('noteVid', JSON.stringify(noteVid))
+      window.location.href = './video.html'
     })
         });
   // $('').click((e) => {
