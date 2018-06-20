@@ -2,13 +2,13 @@
   "name": "Q2PFootNotes",
   "version": "1.0.0",
   "description": "Ty and Greg Q2P",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "knex": "knex",
     "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
     "nodemon":"nodemon server.js"
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
