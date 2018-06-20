@@ -39,22 +39,18 @@ let createNote = (req, res, next) => {
   return knex('notes')
     .insert({
       "user_id": req.body.user_id,
-      "subject": req.body.subject,
+      "subject": "test_subject",
       "content": req.body.content,
       "video_link": req.body.video_link
     })
     .returning('*')
     .then((data) => {
-      // console.log(data);
+    console.log("DATA IS CREATEDATA", data)
       res.json(data[0])
     })
     .catch((err) => {
-      let error = {
-        err: "404"
-      }
-      return next({
-        error
-      })
+      console.log("ERRRRRROR on create", err)
+      res.send(err)
     })
 }
 /////////////READ////////////////

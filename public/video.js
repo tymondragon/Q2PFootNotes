@@ -14,6 +14,7 @@ $(document).ready(() => {
     ////Add old note to page//////////
     $('#textarea1').append(data.content)
   })
+  ///////////UPDATE old note///////
   $("#oldButt").click(() => {
     let newContent = $('#textarea1').val()
     $.ajax({
@@ -47,7 +48,7 @@ $(document).ready(() => {
     $('#vidPlayer').append(userVideo)
     $('#textarea1').empty()
   })
-  ////////save the new note//////////
+  ////////CREATE the new note//////////
   $("#newButt").click(function() {
       let newNote = $('#textarea2').val()
       let link = $("#ytVid").val()
