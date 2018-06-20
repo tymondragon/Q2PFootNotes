@@ -6,7 +6,7 @@
   "scripts": {
     "knex": "knex",
     "heroku-postbuild": "knex migrate:rollback; knex migrate:latest; knex seed:run;",
-    "nodemon":"nodemon server.js"
+    "nodemon":"nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -32,6 +32,6 @@
     "nodemon": "^1.17.5"
   },
   "engines": {
-    "node": "v10.0.0"
+    "node": "v10.3.0"
   }
 }
