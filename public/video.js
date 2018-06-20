@@ -47,18 +47,28 @@ $(document).ready(() => {
     $('#vidPlayer').append(userVideo)
     $('#textarea1').empty()
   })
-  ///save the new note//////////
-  // $("#newButt").click(function() {
-  //   let newNote = $('#textarea2').val()
-  //   let link = $("#ytVid").val()
-  //   $.post("http://localhost:3000/footnotes/notes", {
-  //     user_id: user.id,
-  //     content: newNote,
-  //     video_link: link
-  //   }, function(){
-  //
-  //   })
-  // })
+  ////////save the new note//////////
+  $("#newButt").click(function() {
+      let newNote = $('#textarea2').val()
+      let link = $("#ytVid").val()
+      $.ajax({
+          url: "http://localhost:3000/footnotes/notes",
+          type: 'POST',
+          data: {
+              user_id: user.id,
+              content: newNote,
+              video_link: link
+            },
+          dataType: 'json'
+        })
+        .done(function(data) {
+        console.log("hello" ,data.content);
+        M.toast({
+          html: 'Your Note Was Updated',
+          classes: 'rounded'
+        })
+      })
+  })
 })
 
 // ${data.video_link.slice(17)}
