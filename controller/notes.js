@@ -20,7 +20,7 @@ let createUser = (req, res, next) => {
   return knex('users')
     .insert({
       "first_name": req.body.first_name,
-      "last_name": req.body.last_name,
+      "last_name": "test_last-name",
       "email": req.body.email,
       "hashed_pw": req.body.hashed_pw
     })
