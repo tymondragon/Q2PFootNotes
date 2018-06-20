@@ -2,9 +2,10 @@
   "name": "Q2PFootNotes",
   "version": "1.0.0",
   "description": "Ty and Greg Q2P",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,8 @@
   },
   "devDependencies": {
     "nodemon": "^1.17.5"
+  },
+  "engines": {
+    "node": "v10.0.0"
   }
 }
