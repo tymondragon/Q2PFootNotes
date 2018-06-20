@@ -10,7 +10,7 @@ let signIn = (req, res, next) => {
       }
     })
     .catch((err) => {
-      res.send("Please enter the correct information")
+      res.send(err)
     })
 }
 
