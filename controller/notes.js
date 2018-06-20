@@ -29,12 +29,7 @@ let createUser = (req, res, next) => {
       res.json(data[0])
     })
     .catch((err) => {
-      let error = {
-        err: "404"
-      }
-      return next({
-        error
-      })
+      res.send(err)
     })
 }
 let createNote = (req, res, next) => {
