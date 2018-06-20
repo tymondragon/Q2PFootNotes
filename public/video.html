@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8">
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-  <title>FootNotes  Video</title>
+  <title>FootNotes Video</title>
 </head>
 
 <body>
@@ -32,57 +32,14 @@
       </div>
     </nav>
   </div>
-  <!-- Video window goes here -->
-  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-  <div class="video-container">
-    <div id="player"></div>
+  <div class="row">
+    <div id="vidPlayer" class="col s6 offset-s3">
+      <!-- append to this video div!!! -->
+      <iframe width="600" height="400" src="https://www.youtube.com/embed/-UhLderbuGI?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
   </div>
 
-  <script>
-    var tag = document.createElement('script');
 
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var player;
-    var videoKey = "d1oRLk_PfjM";
-
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '300',
-        width: '492',
-        videoId: 'd1oRLk_PfjM',
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    }
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-      event.target.playVideo();
-    }
-
-    // 5. The API calls this function when the player’s state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-
-    function onPlayerStateChange(event) {
-      if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo);
-        done = true;
-      }
-    }
-
-    function stopVideo() {
-      player.stopVideo();
-    }
-  </script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script src="https://apis.google.com.js/client.js?onload=init"></script>
   <!-- ///////////////////video player code only above///////////// -->
@@ -124,7 +81,7 @@
 
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script src="dom.js"></script>
+  <script src="video.js"></script>
 </body>
 
 </html>

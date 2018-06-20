@@ -59,7 +59,7 @@ $(document).ready(function() {
             id: data.id,
             name: data.first_name
           }))
-          // window.location.href = './dashboard.html'
+          window.location.href = './dashboard.html'
         })
         .fail(function(jqXhr, textStatus, errorThrown) {
           console.log('OOPS:', errorThrown)
