@@ -2,7 +2,7 @@ const knex = require('../knex')
 /////SIGN IN////////
 let signIn = (req, res, next) => {
   knex('users')
-    .andWhere('email', req.body.email)
+    .where('email', req.body.email)
     .andWhere('hashed_pw', req.body.hashed_pw)
     .then((result) => {
       if (result[0].email && result[0].hashed_pw) {
@@ -145,16 +145,17 @@ let updateNote = (req, res, next) => {
 }
 let getOneNoteForUser = (req, res, next) => {
   knex('notes')
-    .where('id', req.params.user_id)
+    .where('id', req.params.id)
     .first()
     .then((data) => {
       if (!data) return next()
-      knex('notes')
-        .where('id', req.params.notes_id)
-        .first()
-        .then((result) => {
-          res.send(result)
-        })
+      res.send(data)
+      // knex('notes')
+      //   .where('id', req.params.notes_id)
+      //   .first()
+      //   .then((result) => {
+      //     res.send(result)
+      //   })
     })
     .catch((err) => {
       let error = {
