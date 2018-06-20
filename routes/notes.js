@@ -13,7 +13,7 @@ router.post('/notes', ctrl.createNote)///////done////////
 router.get('/notes/:id', ctrl.getNotes)////////done//////
 router.get('/users/:id', ctrl.getOneUser)///////done/////
 router.get('/notes', ctrl.getAllNotes)////////done//////
-router.get('/note', ctrl.getOneNoteForUser)
+router.get('/note/:id', ctrl.getOneNoteForUser)
 router.get('/users', ctrl.getUsers)
 
 

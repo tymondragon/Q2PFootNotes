@@ -22,7 +22,7 @@ $(document).ready(function() {
       let noteVid = $(this).parent('a').attr('id')
       console.log(noteVid);
       localStorage.setItem('noteId', JSON.stringify(noteId))
-      localStorage.setItem('noteVid', JSON.stringify(noteVid))
+      // localStorage.setItem('noteVid', JSON.stringify(noteVid))
       window.location.href = './video.html'
     })
         });
