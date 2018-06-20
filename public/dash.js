@@ -12,7 +12,7 @@ $(document).ready(function() {
       let note = $(`<li class="collection-item avatar">
       <h5>Your Note:</h5>
       <p class="this-link">${data[i].content}
-      <a id="${data[i].video_link.slice(17)}" class="waves-effect waves-teal btn-flat right"><i id="${data[i].id}" class="material-icons right video">arrow_forward</i></a></p>
+      <a class="waves-effect waves-teal btn-flat right"><i id="${data[i].id}" class="material-icons right video">arrow_forward</i></a></p>
       </li>`)
       oldNotes.append(note)
     }
