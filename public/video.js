@@ -9,8 +9,9 @@ $(document).ready(() => {
     src="https://www.youtube.com/embed/${data.video_link.slice(17)}"
     frameborder="0"></iframe>`
     $('#vidPlayer').append(userVideo)
+    $('#textarea1').append(data.content)
   })
-
+  $("")
 })
 
 
