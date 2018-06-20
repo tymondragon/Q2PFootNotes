@@ -2,7 +2,7 @@ $(document).ready(() => {
   let note = JSON.parse(localStorage.getItem('noteId'))
   let user = JSON.parse(localStorage.getItem('userLogin'))
   // const video = JSON.parse(localStorage.getItem('noteVid'))
-  $.get(`http://localhost:3000/footnotes/note/${note}`, (data) => {
+  $.get(`/footnotes/note/${note}`, (data) => {
     // let videoLink = `${data.video_link.slice(17,28)}`
     // let time = `${data.video_link.slice(31)}`
     console.log(data);
@@ -17,7 +17,7 @@ $(document).ready(() => {
   $("#oldButt").click(() => {
     let newContent = $('#textarea1').val()
     $.ajax({
-        url: `http://localhost:3000/footnotes/note/${note}`,
+        url: `/footnotes/note/${note}`,
         type: 'POST',
         data: {
           "content": newContent
@@ -52,7 +52,7 @@ $(document).ready(() => {
       let newNote = $('#textarea2').val()
       let link = $("#ytVid").val()
       $.ajax({
-          url: "http://localhost:3000/footnotes/notes",
+          url: "/footnotes/notes",
           type: 'POST',
           data: {
               user_id: user.id,

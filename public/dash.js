@@ -4,7 +4,7 @@ $(document).ready(function() {
   let oldNotes = $('#oldNotes')
   let name = $('#yourName')
   name.append(`<h1 class="center-align"> Hey, ${user.name}! Welcome.</h1>`)
-  $.get(`http://localhost:3000/footnotes/notes/${userId}`, (data) => {
+  $.get(`/footnotes/notes/${userId}`, (data) => {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
       // localStorage.setItem(`id${i}`, JSON.stringify(data[i].id))

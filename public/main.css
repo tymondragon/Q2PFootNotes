@@ -1,13 +1,13 @@
 font-family: 'Song Myung', serif;
 
 #loginPage {
-  background: url("../books-finals.jpg") center fixed;
+  background: url("/books-finals.jpg") center fixed;
   text: white;
   font-weight: bolder;
   font-size: large;
 }
 #dashboardBody {
-  background: url("../stacked-books.png") center fixed;
+  background: url("/stacked-books.png") center fixed;
   background-color: #36aee857;
   text: black;
   font-weight: bolder;

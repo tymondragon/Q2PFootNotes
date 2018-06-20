@@ -11,7 +11,7 @@ $(document).ready(function() {
       })
     } else {
       $.ajax({
-          url: 'http://localhost:3000/footnotes/signup',
+          url: '/footnotes/signup',
           type: 'POST',
           data: {
             first_name: $('#first_name').val(),
@@ -44,7 +44,7 @@ $(document).ready(function() {
       })
     } else {
       $.ajax({
-          url: 'http://localhost:3000/footnotes/login',
+          url: '/footnotes/login',
           type: 'POST',
           data: {
             email: $('#modalEmail').val(),
