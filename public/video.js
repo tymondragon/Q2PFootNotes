@@ -14,13 +14,15 @@ $(document).ready(() => {
     ////Add old note to page//////////
     $('#textarea1').append(data.content)
   })
+  ///////////UPDATE old note///////
   $("#oldButt").click(() => {
+    console.log("button works");
     let newContent = $('#textarea1').val()
     $.ajax({
-        url: `/footnotes/note/${note}`,
-        type: 'POST',
+        url: `/footnotes/notes/${note}`,
+        type: 'PUT',
         data: {
-          "content": newContent
+          content: newContent
         },
         dataType: 'json'
       })
@@ -31,6 +33,7 @@ $(document).ready(() => {
         })
       })
       .fail(function(jqXhr, textStatus, errorThrown) {
+        console.log("*********", errorThrown);
         M.toast({
           html: 'Something is wrong',
           classes: 'rounded'
@@ -47,7 +50,7 @@ $(document).ready(() => {
     $('#vidPlayer').append(userVideo)
     $('#textarea1').empty()
   })
-  ////////save the new note//////////
+  ////////CREATE the new note//////////
   $("#newButt").click(function() {
       let newNote = $('#textarea2').val()
       let link = $("#ytVid").val()
