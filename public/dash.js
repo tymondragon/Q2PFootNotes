@@ -9,14 +9,18 @@ $(document).ready(function() {
     for (let i = 0; i < data.length; i++) {
       // localStorage.setItem(`id${i}`, JSON.stringify(data[i].id))
       // localStorage.setItem(`video${i}`, JSON.stringify(data[i].video_link.slice(17)))
-      let note = $(`<li class="collection-item avatar">
-      <h5>Your Note:</h5>
-      <p class="this-link">${data[i].content}
-      <a class="waves-effect waves-teal btn-flat right"><i id="${data[i].id}" class="material-icons right video">arrow_forward</i></a></p>
-      </li>`)
+      let note = $(`<nav class="row blue-grey darken-3">
+        <div class="blue-grey darken-3">
+          <div class="col s10 truncate">${data[i].content}</div>
+          <ul id="nav-mobile" class="right hide-on-med-and-down col s2">
+            <li><a id="deleteNote" class="red darken-2">Delete</a></li>
+            <li><a id="${data[i].id}" class="green">Watch</a></li>
+          </ul>
+        </div>
+      </nav>`)
       oldNotes.append(note)
     }
-    $("i").bind("click", function() {
+    $("a").bind("click", function() {
       event.preventDefault()
       let noteId = $(this).attr('id')
       let noteVid = $(this).parent('a').attr('id')
@@ -30,12 +34,35 @@ $(document).ready(function() {
     localStorage.removeItem('noteId')
     localStorage.removeItem('userLogin')
   })
-})
-$('#vidLink').click(() => {
-  event.preventDefault()
-  window.open('https://www.youtube.com')
-  window.location.href = './video.html'
+  $('#vidLink').click(() => {
+    event.preventDefault()
+    window.open('https://www.youtube.com')
+    window.location.href = './video.html'
+  })
 })
 
 
+
+
+
+
+// <li class="collection-item avatar">
+// <h5>Your Note:</h5>
+// <p class="this-link">${data[i].content}
+// <a class="waves-effect waves-teal btn-flat right"><i id="${data[i].id}" class="material-icons right video">arrow_forward</i></a></p>
+// </li>
+
+
+
+
+
+// <nav class="row blue-grey darken-3">
+//   <div class="blue-grey darken-3">
+//     <div class="col s10 truncate">${data[i].content}</div>
+//     <ul id="nav-mobile" class="right hide-on-med-and-down col s2">
+//       <li><a id="deleteNote" class="red darken-2">Delete</a></li>
+//       <li><a id="${data[i].id}" class="green">Watch</a></li>
+//     </ul>
+//   </div>
+// </nav>
 // ${data[i].video_link}
