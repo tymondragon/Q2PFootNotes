@@ -39,3 +39,9 @@ h4{
 .ordList{
   background-color: rgb(84, 110, 121);
 }
+.song {
+  font-family: 'Song Myung', serif;
+}
+.lato {
+  font-family: 'Lato', sans-serif;
+}
