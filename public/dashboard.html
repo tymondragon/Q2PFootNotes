@@ -13,7 +13,7 @@
   <title>FootNotes Home Page</title>
 </head>
 
-<body id="dashboardBody">
+<body class="dashboardBody">
 
   <!-- Notes search bar, video search bar -->
   <div class="dashboardNavBar row">
@@ -21,10 +21,10 @@
       <div class="nav-wrapper blue-grey darken-1">
         <a href="#" class="brand-logo">FootNotes</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="dashboard.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
           <li><a href="video.html">Video Page</a></li>
-          <li><a href="https://www.youtube.com/" target="blank">Video Search</a></li>
-          <li><a href="index.html">Logout</a></li>
+          <li><a id="vidLink" href="https://www.youtube.com/" target="blank">Video Search</a></li>
+          <li><a href="index.html" class="logOut">Logout</a></li>
         </ul>
       </div>
     </nav>
@@ -33,13 +33,13 @@
     <div class="row">
       <div id="yourName"class="col s8 offset-s2 valign-wrapper center-align">
       </div>
-      <div class="col s8 offset-s2 valign-wrapper center-align">
-        <h4 class="center-align">Our site is a little green. How it works: First, Click Video Search link,
-          find your video. Second, Copy URL. Third, Paste into the video field. Fourth, Watch a video and take notes!</h4>
+      <div class="ordList col s12 valign-wrapper">
+          <ol class="help">Our site is a little green, here's how it works.
+            <li>Click "Video Search", find your video</li>
+            <li>Copy link, paste link into "Youtube Link" field</li>
+            <li>Watch your video and take notes!</li>
+          </ol>
       </div>
-      <br>
-      <br>
-      <br>
       <div class="row">
         <div class="oldNotesDiv col s12 blue-grey darken-1" placeholder="old notes here">
           <ul id="oldNotes" class="collection">

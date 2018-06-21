@@ -72,6 +72,10 @@ $(document).ready(() => {
         })
       })
   })
+  $(".logOut").click(function() {
+    localStorage.removeItem('noteId')
+    localStorage.removeItem('userLogin')
+  })
 })
 
 // ${data.video_link.slice(17)}
