@@ -6,7 +6,7 @@ font-family: 'Song Myung', serif;
   font-weight: bolder;
   font-size: large;
 }
-#dashboardBody {
+.dashboardBody {
   background: url("/stacked-books.png") center fixed;
   background-color: #36aee857;
   text: black;
@@ -26,4 +26,16 @@ h4{
 #login {
 
   color: #000000;
+}
+#newButt {
+  color: #000000;
+}
+#oldButt {
+  color: #000000;
+}
+.help {
+  color: white;
+}
+.ordList{
+  background-color: rgb(84, 110, 121);
 }
