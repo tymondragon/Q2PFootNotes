@@ -13,7 +13,7 @@ $(document).ready(function() {
         <div class="blue-grey darken-3">
           <div class="col s10 truncate">${data[i].content}</div>
           <ul id="nav-mobile" class="right hide-on-med-and-down col s2">
-            <li><a id="deleteNote" class="delButton red darken-2">Delete</a></li>
+            <li><a id="${data[i].id}" class="delButton red darken-2">Delete</a></li>
             <li><a id="${data[i].id}" class="noteButton green">Watch</a></li>
           </ul>
         </div>
@@ -32,9 +32,15 @@ $(document).ready(function() {
     $("a.delButton").bind("click", function() {
       event.preventDefault()
       let Parent = $(this).parent('li').parent('ul').parent('div').parent('nav')
+      let id = Number($(this).attr('id'))
       Parent.addClass('hide')
-      console.log(Parent);
-
+      $.ajax({
+          url: `/footnotes/notes/${id}`,
+          type: 'DELETE',
+          data: {
+              id: id
+          },
+          dataType: 'json'    })
 
     })
   });
