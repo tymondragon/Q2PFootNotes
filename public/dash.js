@@ -13,8 +13,8 @@ $(document).ready(function() {
         <div class="blue-grey darken-3">
           <div class="col s10 truncate lato">${data[i].content}</div>
           <ul id="nav-mobile" class="right hide-on-med-and-down col s2">
-            <li><a id="${data[i].id}" class="delButton red darken-2 lato">Delete</a></li>
-            <li><a id="${data[i].id}" class="noteButton green lato">Watch</a></li>
+            <li><a id="${data[i].id}" class="delButton lato">Delete</a></li>
+            <li><a id="${data[i].id}" class="noteButton lato">Watch</a></li>
           </ul>
         </div>
       </nav>`)
