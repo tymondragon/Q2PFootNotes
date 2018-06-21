@@ -174,8 +174,7 @@ let deleteOneNote = (req, res, next) => {
         })
     })
     .catch((err) => {
-      console.log("DELETE ONE NOTE ERRRRRROR", err);
-      res.send(err)
+      next(err)
     })
 }
 let getUsers = (req, res, next) => {
