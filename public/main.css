@@ -1,6 +1,6 @@
 #loginPage {
-  background: url("/stacked-books.png") center fixed;
-  text: white;
+  background: url("/books-finals.jpg") center fixed;
+  text: black;
   font-weight: bolder;
   font-size: large;
 }
@@ -12,9 +12,9 @@
   font-size: large;
 }
 h1{
-  color: white;
+  color: black;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-color: white;
 }
 h4{
   color: white;
