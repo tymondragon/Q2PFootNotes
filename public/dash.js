@@ -13,14 +13,14 @@ $(document).ready(function() {
         <div class="blue-grey darken-3">
           <div class="col s10 truncate">${data[i].content}</div>
           <ul id="nav-mobile" class="right hide-on-med-and-down col s2">
-            <li><a id="deleteNote" class="red darken-2">Delete</a></li>
-            <li><a id="${data[i].id}" class="green">Watch</a></li>
+            <li><a id="deleteNote" class="delButton red darken-2">Delete</a></li>
+            <li><a id="${data[i].id}" class="noteButton green">Watch</a></li>
           </ul>
         </div>
       </nav>`)
       oldNotes.append(note)
     }
-    $("a").bind("click", function() {
+    $("a.noteButton").bind("click", function() {
       event.preventDefault()
       let noteId = $(this).attr('id')
       let noteVid = $(this).parent('a').attr('id')
@@ -28,6 +28,14 @@ $(document).ready(function() {
       localStorage.setItem('noteId', JSON.stringify(noteId))
       // localStorage.setItem('noteVid', JSON.stringify(noteVid))
       window.location.href = './video.html'
+    })
+    $("a.delButton").bind("click", function() {
+      event.preventDefault()
+      let Parent = $(this).parent('li').parent('ul').parent('div').parent('nav')
+      Parent.addClass('hide')
+      console.log(Parent);
+
+
     })
   });
   $(".logOut").click(function() {
@@ -45,7 +53,7 @@ $(document).ready(function() {
 
 
 
-
+// let noteVid = $(this).parent('a').attr('id')
 // <li class="collection-item avatar">
 // <h5>Your Note:</h5>
 // <p class="this-link">${data[i].content}
