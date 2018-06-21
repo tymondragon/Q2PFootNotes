@@ -3,7 +3,7 @@ $(document).ready(function() {
   let userId = user.id;
   let oldNotes = $('#oldNotes')
   let name = $('#yourName')
-  name.append(`<h1 class="center-align"> Hey, ${user.name}! Welcome.</h1>`)
+  name.append(`<h1 class="center-align song"> Hey, ${user.name}! Welcome.</h1>`)
   $.get(`/footnotes/notes/${userId}`, (data) => {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
@@ -11,10 +11,10 @@ $(document).ready(function() {
       // localStorage.setItem(`video${i}`, JSON.stringify(data[i].video_link.slice(17)))
       let note = $(`<nav class="row blue-grey darken-3">
         <div class="blue-grey darken-3">
-          <div class="col s10 truncate">${data[i].content}</div>
+          <div class="col s10 truncate lato">${data[i].content}</div>
           <ul id="nav-mobile" class="right hide-on-med-and-down col s2">
-            <li><a id="${data[i].id}" class="delButton red darken-2">Delete</a></li>
-            <li><a id="${data[i].id}" class="noteButton green">Watch</a></li>
+            <li><a id="${data[i].id}" class="delButton red darken-2 lato">Delete</a></li>
+            <li><a id="${data[i].id}" class="noteButton green lato">Watch</a></li>
           </ul>
         </div>
       </nav>`)
