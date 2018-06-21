@@ -26,7 +26,7 @@ $.get(`/footnotes/notes/${userId}`, (data) => {
     window.location.href = './video.html'
   })
 });
-$("#vidLogOut").click(function() {
+$(".logOut").click(function() {
   localStorage.removeItem('noteId')
   localStorage.removeItem('userLogin')
 })
@@ -41,6 +41,5 @@ $("#vidLogOut").click(function() {
 //   // window.open('https://www.youtube.com')
 //   window.location.href = './video.html'
 // })
-})
 
 // ${data[i].video_link}

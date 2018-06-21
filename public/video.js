@@ -72,7 +72,7 @@ $(document).ready(() => {
         })
       })
   })
-  $("#vidLogOut").click(function() {
+  $(".logOut").click(function() {
     localStorage.removeItem('noteId')
     localStorage.removeItem('userLogin')
   })
