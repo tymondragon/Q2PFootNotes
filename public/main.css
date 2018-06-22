@@ -32,10 +32,7 @@ h4 {
 #oldButt {
   color: #000000;
 }
-.title {
-  text-decoration-line: underline;
-   text-decoration-style: solid;
-}
+
 .dashboardBody {
   background: url("/stacked-books.png") center fixed;
   background-color: #36aee857;
