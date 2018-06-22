@@ -10,7 +10,7 @@ $(document).ready(() => {
     let userVideo = `<div id="vidPlayer" class="col s6 offset-s3">
     <iframe id="ytplayer" type="text/html" width="640" height="400"
     src="https://www.youtube.com/embed/${data.video_link.slice(17)}"
-    frameborder="0"></iframe>
+    frameborder="0" allowfullscreen></iframe>
     </div>`
     // let userVideo = `<iframe id="ytplayer" type="text/html" width="640" height="400"
     // src="https://www.youtube.com/embed/${data.video_link.slice(17)}"
