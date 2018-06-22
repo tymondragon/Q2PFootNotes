@@ -40,6 +40,13 @@ h4 {
   font-weight: bolder;
   font-size: large;
 }
+.videoBody {
+  background: url("/stacked-books.png") left fixed;
+  background-color: #36aee857;
+  text: black;
+  font-weight: bolder;
+  font-size: large;
+}
 
 .delButton {
   background-color: #d32f2f80;
