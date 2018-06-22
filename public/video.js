@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  $('.sidenav').sidenav();
   let note = JSON.parse(localStorage.getItem('noteId'))
   let user = JSON.parse(localStorage.getItem('userLogin'))
   // const video = JSON.parse(localStorage.getItem('noteVid'))
@@ -9,10 +10,13 @@ $(document).ready(() => {
     let userVideo = `<iframe id="ytplayer" type="text/html" width="640" height="400"
     src="https://www.youtube.com/embed/${data.video_link.slice(17)}"
     frameborder="0"></iframe>`
+    
     /////Add video to page/////
     $('#vidPlayer').append(userVideo)
     ////Add old note to page//////////
     $('#textarea1').append(data.content)
+    $("#ytVid").val(`${data.video_link}`)
+    $("#ytVid").val(`${data.video_link}`)
   })
   ///////////UPDATE old note///////
   $("#oldButt").click(() => {
@@ -75,6 +79,7 @@ $(document).ready(() => {
   $(".logOut").click(function() {
     localStorage.removeItem('noteId')
     localStorage.removeItem('userLogin')
+    localStorage.removeItem('noteVid')
   })
 })
 

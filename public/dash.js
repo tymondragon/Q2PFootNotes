@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.sidenav').sidenav();
   const user = JSON.parse(localStorage.getItem('userLogin'))
   let userId = user.id;
   let oldNotes = $('#oldNotes')
@@ -18,6 +19,7 @@ $(document).ready(function() {
           </ul>
         </div>
       </nav>`)
+
       oldNotes.append(note)
     }
     $("a.noteButton").bind("click", function() {
@@ -26,7 +28,7 @@ $(document).ready(function() {
       let noteVid = $(this).parent('a').attr('id')
       console.log(noteVid);
       localStorage.setItem('noteId', JSON.stringify(noteId))
-      // localStorage.setItem('noteVid', JSON.stringify(noteVid))
+      localStorage.setItem('noteVid', JSON.stringify(noteVid))
       window.location.href = './video.html'
     })
     $("a.delButton").bind("click", function() {

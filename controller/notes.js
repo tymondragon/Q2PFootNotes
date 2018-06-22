@@ -107,6 +107,7 @@ let updateNote = (req, res, next) => {
   knex('notes')
     .where('id', req.params.id)
     .then((data) => {
+      console.log("i got this data", data);
       knex('notes')
         .where('id', req.params.id)
         .limit(1)

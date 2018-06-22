@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.sidenav').sidenav();
   $('.modal').modal();
   /////This is the create a user//////
   $('#login').click((event) => {
