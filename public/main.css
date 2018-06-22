@@ -1,20 +1,20 @@
+
+h1 {
+  color: black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffffe0;
+}
+
+h4 {
+  color: #ffffffe0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
 #loginPage {
   background: url("/books-finals.jpg") center fixed;
   text: black;
   font-weight: bolder;
   font-size: large;
-}
-
-h1 {
-  color: black;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white;
-}
-
-h4 {
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
 }
 
 #login {
@@ -32,7 +32,10 @@ h4 {
 #oldButt {
   color: #000000;
 }
-
+.title {
+  text-decoration-line: underline;
+   text-decoration-style: solid;
+}
 .dashboardBody {
   background: url("/stacked-books.png") center fixed;
   background-color: #36aee857;
@@ -46,9 +49,15 @@ h4 {
 }
 
 .help {
-  color: white;
+  color: #ffffffe0;
 }
-
+span.help {
+  font-size: 25px;
+}
+.information {
+  font-size: 20px !important;
+  color: #ffffffe0;
+}
 .ordList {
   background-color: rgb(84, 110, 121);
 }
@@ -64,8 +73,26 @@ h4 {
 .song {
   font-family: 'Song Myung', serif;
 }
-
+.textarea {
+  font-size: 25px !important;
+}
+.title {
+  font-size: 25px !important;
+}
 .videoRow {
   margin-bottom: 10px;
   margin-top: 10px;
+}
+.watch {
+  margin-left: 65px;
+}
+h3.padding-right {
+    color: #ffffffe0;
+    margin-right: 24px;
+}
+.padding-left {
+    padding-left: 10px;
+}
+a.brand-logo {
+    left: 10px;
 }

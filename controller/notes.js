@@ -39,7 +39,7 @@ let createNote = (req, res, next) => {
   return knex('notes')
     .insert({
       "user_id": req.body.user_id,
-      "subject": "test_subject",
+      "subject": req.body.subject,
       "content": req.body.content,
       "video_link": req.body.video_link
     })
