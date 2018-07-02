@@ -152,8 +152,6 @@ module.exports = {
   deleteOneNote,
   createUser,
   getOneUser,
-  updateUser,
-  getOneNote,
-  getUsers
+  getOneNote
 }
 // getNotesBySubject,
