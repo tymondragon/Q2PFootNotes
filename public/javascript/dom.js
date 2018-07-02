@@ -22,7 +22,6 @@ $(document).ready(function() {
           dataType: 'json'
         })
         .done((data) => {
-          console.log("yay! for objects", data)
           localStorage.setItem('userLogin', JSON.stringify({
             id: data.id,
             name: data.first_name
@@ -30,7 +29,6 @@ $(document).ready(function() {
           window.location.href = './dashboard.html'
         })
         .fail(function(jqXhr, textStatus, errorThrown) {
-          console.log('OOPS:', errorThrown)
         })
     }
   })
@@ -39,7 +37,6 @@ $(document).ready(function() {
     let modalPass = $('#password').val()
     event.preventDefault()
     if (modalPass === '' || email === '') {
-      // console.log("This is email", email, "=thithiasehgia", modalPass)
       M.toast({
         html: 'Please Enter Valid Credentials'
       })
@@ -54,8 +51,6 @@ $(document).ready(function() {
           dataType: 'json'
         })
         .done((data) => {
-          console.log("User has signed in", data)
-          console.log(data, "JELLLOOOOOOO");
           localStorage.setItem('userLogin', JSON.stringify({
             id: data.id,
             name: data.first_name
@@ -63,8 +58,7 @@ $(document).ready(function() {
           window.location.href = './dashboard.html'
         })
         .fail(function(jqXhr, textStatus, errorThrown) {
-          console.log('OOPS:', errorThrown)
         })
     }
   })
-}); /////end of the doc .ready function
+}); 
