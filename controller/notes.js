@@ -154,4 +154,3 @@ module.exports = {
   getOneUser,
   getOneNote
 }
-// getNotesBySubject,
