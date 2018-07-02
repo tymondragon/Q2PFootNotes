@@ -4,29 +4,24 @@ const ctrl = require('../controller/notes.js')
 
 
 
-router.post('/login', ctrl.signIn)/////Will be done later////
-router.post('/signup', ctrl.createUser)////////done/////
-router.post('/notes', ctrl.createNote)///////done////////
+router.post('/login', ctrl.signIn)
+router.post('/signup', ctrl.createUser)
+router.post('/notes', ctrl.createNote)
 
 
 
-router.get('/notes/:id', ctrl.getNotes)////////done//////
-router.get('/users/:id', ctrl.getOneUser)///////done/////
-router.get('/notes', ctrl.getAllNotes)////////done//////
+router.get('/notes/:id', ctrl.getNotes)
+router.get('/users/:id', ctrl.getOneUser)
+router.get('/notes', ctrl.getAllNotes)
 router.get('/note/:id', ctrl.getOneNoteForUser)
-router.get('/users', ctrl.getUsers)
 
 
-router.put('/notes/:id', ctrl.updateNote)////done
-router.patch('/users/:id', ctrl.updateUser)//////done////
+router.put('/notes/:id', ctrl.updateNote)
 
 
-router.delete('/notes/:id', ctrl.deleteOneNote)////////done
+router.delete('/notes/:id', ctrl.deleteOneNote)
 
-//////////////////////////////////////
-//////////////////////////////////////
 
-// router.delete('/users/:id', ctrlUser.deleteOne)
 
 
 
