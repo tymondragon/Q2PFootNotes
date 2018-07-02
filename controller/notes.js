@@ -13,10 +13,8 @@ let signIn = (req, res, next) => {
       res.send(err)
     })
 }
-
 ////////CREATE////////
 let createUser = (req, res, next) => {
-  console.log(req.body);
   return knex('users')
     .insert({
       "first_name": req.body.first_name,
@@ -26,16 +24,13 @@ let createUser = (req, res, next) => {
     })
     .returning('*')
     .then((data) => {
-      console.log("DATA IS JEJEJEJ", data);
       res.json(data[0])
     })
     .catch((err) => {
-      console.log("ERRRRRROR", err);
       res.send(err)
     })
 }
 let createNote = (req, res, next) => {
-  console.log(req.body);
   return knex('notes')
     .insert({
       "user_id": req.body.user_id,
@@ -45,11 +40,9 @@ let createNote = (req, res, next) => {
     })
     .returning('*')
     .then((data) => {
-    console.log("DATA IS CREATEDATA", data)
       res.json(data[0])
     })
     .catch((err) => {
-      console.log("ERRRRRROR on create", err)
       res.send(err)
     })
 }
@@ -63,7 +56,6 @@ let getNotes = (req, res, next) => {
       return res.status(200).send(result)
     })
     .catch((err) => {
-      console.log("GETNOTES ERRRRRROR", err);
       res.send(err)
     })
 }
@@ -84,7 +76,6 @@ let getOneNote = (req, res, next) => {
       res.send(result)
     })
     .catch((err) => {
-      console.log("GET ONE NOTE ERRRRRROR", err);
       res.send(err)
     })
 }
@@ -97,17 +88,14 @@ let getOneUser = (req, res, next) => {
       res.send(result)
     })
     .catch((err) => {
-      console.log("ERRRRRROR", err);
       res.send(err)
     })
 }
 ///////UPDATE///////
 let updateNote = (req, res, next) => {
-  console.log("NOTES.JS LINE 106", req.params.id);
   knex('notes')
     .where('id', req.params.id)
     .then((data) => {
-      console.log("i got this data", data);
       knex('notes')
         .where('id', req.params.id)
         .limit(1)
@@ -116,12 +104,10 @@ let updateNote = (req, res, next) => {
         })
         .returning('*')
         .then((data) => {
-          console.log("DATA IS UPDATE NOTE", data)
           res.json(data[0])
         })
     })
     .catch((err) => {
-      console.log("UPDATE NOTE ERRRRRROR", err);
       next(err)
     })
 }
@@ -134,30 +120,7 @@ let getOneNoteForUser = (req, res, next) => {
       res.send(data)
     })
     .catch((err) => {
-      console.log("GET ONE NOTE FOR USER ERRRRRROR", err);
       res.send(err)
-    })
-}
-let updateUser = (req, res, next) => {
-  knex('users')
-    .where('id', req.params.id)
-    .then((data) => {
-      knex('users')
-        .where('id', req.params.id)
-        .limit(1)
-        .update({
-          "first_name": req.body.first_name,
-          "last_name": req.body.last_name,
-          "email": req.body.email,
-          "hashed_pw": req.body.hashed_pw
-        })
-        .returning('*')
-        .then((data) => {
-          res.json(data[0])
-        })
-    })
-    .catch((err) => {
-      next(err)
     })
 }
 //////////DELETE/////////
@@ -175,17 +138,7 @@ let deleteOneNote = (req, res, next) => {
         })
     })
     .catch((err) => {
-      console.log("DELETE ONE NOTE ERRRRRROR", err);
       res.send(err)
-    })
-}
-let getUsers = (req, res, next) => {
-  return knex('users')
-    .then((rows) => {
-      res.json(rows)
-    })
-    .catch((err) => {
-      next(err)
     })
 }
 

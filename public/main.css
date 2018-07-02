@@ -11,7 +11,7 @@ h4 {
   -webkit-text-stroke-color: black;
 }
 #loginPage {
-  background: url("./images/books-finals.jpg") center fixed;
+  background: url("images/books-finals.jpg") center fixed;
   text: black;
   font-weight: bolder;
   font-size: large;
@@ -34,14 +34,14 @@ h4 {
 }
 
 .dashboardBody {
-  background: url("./images/stacked-books.png") center fixed;
+  background: url("images/stacked-books.png") center fixed;
   background-color: #36aee857;
   text: black;
   font-weight: bolder;
   font-size: large;
 }
 .videoBody {
-  background: url("./images/stacked-books.png") left fixed;
+  background: url("images/stacked-books.png") left fixed;
   background-color: #36aee857;
   text: black;
   font-weight: bolder;
