@@ -6,10 +6,8 @@ $(document).ready(function() {
   let name = $('#yourName')
   name.append(`<h1 class="center-align song"> Hey, ${user.name}! Welcome.</h1>`)
   $.get(`/footnotes/notes/${userId}`, (data) => {
-    console.log(data);
+
     for (let i = 0; i < data.length; i++) {
-      // localStorage.setItem(`id${i}`, JSON.stringify(data[i].id))
-      // localStorage.setItem(`video${i}`, JSON.stringify(data[i].video_link.slice(17)))
       let note = $(`<nav class="${data[i].id} row blue-grey darken-3">
           <div class="col s2 truncate lato information"><span class="song title">Title:   </span>${data[i].subject}</div>
           <div class="col s7 truncate lato information"><span class="song title">Content:   </span>${data[i].content}</div>
@@ -25,7 +23,6 @@ $(document).ready(function() {
       event.preventDefault()
       let noteId = $(this).attr('id')
       let noteVid = $(this).parent('a').attr('id')
-      console.log(noteVid);
       localStorage.setItem('noteId', JSON.stringify(noteId))
       localStorage.setItem('noteVid', JSON.stringify(noteVid))
       window.location.href = './video.html'
@@ -33,9 +30,6 @@ $(document).ready(function() {
     $("a.delButton").bind("click", function() {
       event.preventDefault()
       let parent = $(this).parentsUntil('ul.note-list')
-      // .parents('ul').parents('div').parents('nav')
-      // let parent = $(this).parents('li').parents('ul').parents('div').parents('nav')
-      console.log(parent);
       let id = Number($(this).attr('id'))
       parent.addClass('hide')
       $.ajax({
